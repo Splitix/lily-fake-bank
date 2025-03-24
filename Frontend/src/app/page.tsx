@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [bank, setBank] = useState({
-    amount: "",
+    amount: "...",
   });
 
   useEffect(() => {
