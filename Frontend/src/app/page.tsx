@@ -9,10 +9,12 @@ export default function Home() {
   useEffect(() => {
     async function fetchPosts() {
       console.log("fetching bank");
+      console.log(process.env.NEXT_PUBLIC_API_ENDPOINT);
+
       const res = await fetch(
-        "http://localhost:3001/api/get/67ddb7a8132ec18c228d767b"
+        `${process.env.NEXT_PUBLIC_API_ENDPOINT}:3001/api/get/67ddb7a8132ec18c228d767b`
       ).finally(() => {
-        setTimeout(fetchPosts, 5000);
+        setTimeout(fetchPosts, 30000);
       });
       const data = await res.json();
       setBank(data);

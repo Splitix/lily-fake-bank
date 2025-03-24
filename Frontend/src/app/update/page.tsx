@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 
+const apiUrl = process.env.NEXT_PUBLIC_API_ENDPOINT;
+
 export default function Update() {
   const [bank, setBank] = useState({
     amount: "",
@@ -9,9 +11,7 @@ export default function Update() {
 
   async function fetchPosts() {
     console.log("fetching bank");
-    const res = await fetch(
-      "http://localhost:3001/api/get/67ddb7a8132ec18c228d767b"
-    );
+    const res = await fetch(apiUrl + ":3001/api/get/67ddb7a8132ec18c228d767b");
     const data = await res.json();
     setBank(data);
   }
@@ -28,7 +28,7 @@ export default function Update() {
     } else {
       try {
         const response = await fetch(
-          "http://localhost:3001/api/update/67ddb7a8132ec18c228d767b",
+          apiUrl + ":3001/api/update/67ddb7a8132ec18c228d767b",
           {
             method: "PATCH",
             headers: {
