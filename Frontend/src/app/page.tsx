@@ -27,7 +27,7 @@ export default function Home() {
       <h1>Lily's Bank</h1>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <div className="h22">
-          $<h2>{bank.amount}</h2>
+          $<h2>{parseFloat(bank.amount).toFixed(2)}</h2>
         </div>
       </main>
     </div>

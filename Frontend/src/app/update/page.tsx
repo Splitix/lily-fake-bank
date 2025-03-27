@@ -59,7 +59,7 @@ export default function Update() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <label>
           <div style={{ fontSize: "25px", color: "white" }}>
-            Current Amount: ${bank.amount}
+            Current Amount: ${parseFloat(bank.amount).toFixed(2)}
           </div>
         </label>
         <form onSubmit={handleSubmit}>
